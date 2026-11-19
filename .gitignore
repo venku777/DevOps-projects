@@ -1,0 +1,6 @@
+**/terraform-key
+**/vpc-key
+*.pem
+*.tfstate
+*.tfstate.*
+.terraform/
