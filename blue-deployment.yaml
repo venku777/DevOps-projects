@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: demo
+      version: blue
+
+  template:
+    metadata:
+      labels:
+        app: demo
+        version: blue
+
+    spec:
+      containers:
+      - name: nginx-container
+        image: venku18/static-website-image:v18
+        ports:
+        - containerPort: 80

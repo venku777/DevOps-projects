@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: demo
+      version: green
+
+  template:
+    metadata:
+      labels:
+        app: demo
+        version: green
+
+    spec:
+      containers:
+      - name: nginx-container
+        image: venku18/static-website2-image:v17
+        ports:
+        - containerPort: 80
